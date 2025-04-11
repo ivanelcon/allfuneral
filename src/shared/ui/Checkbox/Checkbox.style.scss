@@ -1,0 +1,53 @@
+.checkbox {
+  display: flex;
+  align-items: center;
+  color: #000000CC;
+  &__input-wrapper {
+    display: flex;
+    pointer-events: none;
+    padding: 10px;
+    background-color: transparent;
+    border-radius: 50%;
+    transition: background-color .35s ease;
+    &:hover {
+      background-color: rgb(238, 238, 238);
+    }
+    &:active {
+      background-color: rgb(226, 226, 226);
+    }
+  }
+  &__input {
+    pointer-events: all;
+    appearance: none;
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 1px solid #0000004D;
+    border-radius: 4px;
+    background-color: #ffffff;
+    cursor: pointer;
+    transition: all .35s ease-in-out;
+    margin: 0;
+    &:checked {
+      background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'><path fill='none' stroke='%23000000CC' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M16.875 5.62537L8.125 14.375L3.75 10.0004'/></svg>");
+    }
+    &:focus {
+      outline: none;
+    }
+    &:hover:not(:disabled) {
+      border: 1px solid #8b8b8b;
+    }
+    &:disabled {
+      cursor: not-allowed;
+      opacity: 0.5;
+      ~ [class$="__label"] {
+        cursor: not-allowed;
+        opacity: 0.5;
+      }
+    }
+  }
+  &__label {
+    cursor: pointer;
+    user-select: none;
+  }
+}

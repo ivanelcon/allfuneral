@@ -1,0 +1,20 @@
+.company-details {
+  &__container {
+    display: flex;
+    gap: 12px;
+    > * {
+      flex: 1;
+      &:first-child input {
+        width: 100%;
+        min-width: 100px;
+      }
+      &:last-child {
+        > *:first-child {
+          width: 40px;
+        }
+        min-width: 150px;
+        max-width: 240px;
+      }
+    }
+  }
+}

@@ -1,0 +1,39 @@
+.photos {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  font-size: 14px;
+  &--empty {
+    grid-template-columns: 1fr;
+  }
+  &__item {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 108px;
+    overflow: hidden;
+    border-radius: 8px;
+    border: 2px solid transparent;
+    transition: border-color .15s ease;
+    cursor: pointer;
+    img, a {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    &:hover {
+      border: 2px solid #6243E6;
+    }
+    &--pending {
+      pointer-events: none;
+      opacity: 0.5;
+    }
+  }
+  &__trash {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    cursor: pointer;
+  }
+}

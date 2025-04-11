@@ -1,0 +1,20 @@
+.round-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  min-width: 32px;
+  min-height: 32px;
+  cursor: pointer;
+  background-color: transparent;
+  transition: all .35s ease;
+  border-radius: 50%;
+  &:hover {
+    background-color: rgba(59, 59, 59, 0.05);
+  }
+  &:active {
+    background-color: rgba(153, 129, 255, 0.2);
+ 
+  }
+}

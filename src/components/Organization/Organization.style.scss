@@ -1,0 +1,19 @@
+.organization {
+  width: 640px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin: 0 auto;
+  &__blocklist {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  &__fetch,
+  &__error {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}

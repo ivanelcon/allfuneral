@@ -1,0 +1,30 @@
+.menu {
+  position: fixed;
+  height: 100vh;
+  width: 48px;
+  background-color: #3B3B3B;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  &__item {
+    width: 36px;
+    height: 36px;
+    margin: 15px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color .15s ease;
+    &:not([class$="--logotype"]):not([class$="--current"]):hover {
+      background-color: #FFFFFF1A;
+    }
+    &--current {
+      background-color: #FFFFFF33;
+    }
+  }
+  &__bottom {
+    border-top: 1px solid grey;
+  }
+}

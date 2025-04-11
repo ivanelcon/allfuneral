@@ -1,0 +1,31 @@
+.dialog-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 360px;
+  box-sizing: border-box;
+  border-radius: 8px;
+  padding: 24px;
+  box-shadow: 0 3px 8px #0000001F;
+  background-color: white;
+  word-wrap: break-word;
+  &__title {
+    color: #000000CC;
+    font-size: 14px;
+    font-weight: 700;
+    text-align: center;
+  }
+  &__content {
+    font-size: 14px;
+    color: #000000CC;
+    text-align: center;
+  }
+  &__actions,
+  &__content {
+    display: flex;
+    gap: 16px;
+    > * {
+      flex: 1;
+    }
+  }
+}

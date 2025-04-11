@@ -1,0 +1,23 @@
+.keyvalueblock {
+  display: flex;
+  align-items: center;
+  padding: 5px 0;
+  &__prop {
+    width: 160px;
+    font-size: 13px;
+    color: #00000080;
+  }
+  &__value {
+    font-size: 14px;
+    color: #000000CC;
+    flex: 1;
+    display: flex;
+    > input {
+      flex: 1;
+    }
+  }
+  &__slash {
+    margin: 0 12px;
+    color: #0000004D;
+  }
+}

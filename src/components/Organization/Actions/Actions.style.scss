@@ -1,0 +1,22 @@
+.actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-weight: 500;
+  font-size: 28px;
+  color: #000000CC;
+  &__text {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-left: -50px;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+  &__actions {
+    display: flex;
+    gap: 5px;
+  }
+}

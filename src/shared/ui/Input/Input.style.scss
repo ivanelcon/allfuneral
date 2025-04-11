@@ -1,0 +1,16 @@
+.input {
+  border: 1px solid #00000033;
+  border-radius: 8px;
+  padding: 9px;
+  outline: none;
+  font-size: 14px;
+  font-family: "Poppins";
+  color: #000000CC;
+  &:hover {
+    border-color: #00000080;
+  }
+  &:focus {
+    border-color: transparent;
+    outline: 2px solid #35CDFD;
+  }
+}
