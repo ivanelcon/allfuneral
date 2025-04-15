@@ -3,6 +3,7 @@ test-task-api.allfuneral.com</br>
 </br>
 Включает:</br>
 mobx для кеширования/хранения</br>
+роутинг через MainLayout с фоллбеком на NotFound</br>
 кастомный uikit без библиотек</br>
 работа с масками react-imask</br>
 работа c сетью через нативный fetch</br>
