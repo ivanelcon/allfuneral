@@ -12,3 +12,5 @@ reauth-логика при работе с API</br>
 нотификация через notistack</br>
 удобную работу с svg через vite-плагин vite-plugin-svgr</br>
 отображение thumbnail-прелоадера при загрузке картинок</br>
+
+![@](https://github.com/user-attachments/assets/01dbce97-074b-48bc-aba9-906d30a3f3a5)
