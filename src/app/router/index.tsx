@@ -12,9 +12,10 @@ import { Signout } from "@/pages/Signout";
 export const routes = <BrowserRouter>
   <Routes>
     <Route element={<MainLayout />}>
-      <Route index element={<Organization />} />
+      <Route index element={<Organizations />} />
       <Route path="organization/:id" element={<Organization />} />
       <Route path="organizations" element={<Organizations />} />
+      <Route path="allfuneral" element={<Organizations />} />
       <Route path="contractors" element={<Contractors />} />
       <Route path="clients" element={<Clients />} />
       <Route path="search" element={<Search />} />
