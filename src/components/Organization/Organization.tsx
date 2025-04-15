@@ -14,7 +14,7 @@ export const Organization: React.FC<Organization> = () => {
   const { enqueueSnackbar } = useSnackbar();
   const id = Number(params.id);
   const {fetching, error} = useOrganization(id);
-  
+ 
   if (fetching) {
     return <div className="organization__fetch">Loading...</div>
   }

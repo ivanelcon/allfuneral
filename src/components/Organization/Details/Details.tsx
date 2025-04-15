@@ -1,30 +1,47 @@
 import "./Details.style.scss";
-import React from "react";
+import React, { Fragment } from "react";
 import { observer } from "mobx-react-lite";
-import { Type, KeyValueBlock } from "@/components/KeyValueBlock/KeyValueBlock";
+import { KeyValueBlock } from "@/components/KeyValueBlock/KeyValueBlock";
 import { Block } from "@/components/Block/Block";
 import { ButtonsWithTitle } from "@/components/ButtonsWithTitle/ButtonsWithTitle";
 import { useDetails } from "./useDetails";
+import { DatePicker } from "antd";
+import { Selectbox } from "@/shared/ui/Selectbox/Selectbox";
+import { Input } from "@/shared/ui/Input/Input";
+import dayjs from "dayjs";
 
 export interface Details {}
 export const Details: React.FC<Details> = observer(() => {
   
-  const {state, organization, businessEntity, types, date, no, editing,
+  const {
+    state,
+    organization,
+    businessEntity,
+    types,
+    date,
+    editing,
     setEditing,
     onSaveClick,
     onXClick,
-    onNumberChange,
     onDateChange,
     onBusinessEntityChange,
-    onCompanyTypeChange
+    onCompanyTypeChange,
+    maskRef,
+    no
   } = useDetails();
 
   const agreementBlock = editing ?
     <div className="company-details__container">
-      <KeyValueBlock prop="Agreement number" value={state.no} editing={editing} onInputChange={onNumberChange} />
-      <KeyValueBlock prop="Date" type={Type.DATE} value={state.date} editing={editing} onDateChange={onDateChange} />
+      <KeyValueBlock prop="Agreement number">
+        <Input name="no" ref={maskRef as any} />
+      </KeyValueBlock>
+      <KeyValueBlock prop="Date">
+        <DatePicker className="datepicker" format="MM.DD.YYYY" defaultValue={dayjs(state.date, "MM.DD.YYYY")} onChange={onDateChange} />
+      </KeyValueBlock>
     </div> :
-    <KeyValueBlock type={Type.SLASH} prop="Agreement" value={[no, date]} editing={editing} />;
+    <KeyValueBlock prop="Agreement">
+      <Fragment>{no}<span className="company-details__slash">/</span>{date}</Fragment>
+    </KeyValueBlock>
 
   return organization && <Block>
     <ButtonsWithTitle 
@@ -35,20 +52,12 @@ export const Details: React.FC<Details> = observer(() => {
       onXClick={onXClick} />
     <div className="company-details">
       {agreementBlock}
-      <KeyValueBlock
-        type={Type.SELECT}
-        prop="Business entity"
-        values={[businessEntity]}
-        value={state.businessEntity}
-        onSelectChange={onBusinessEntityChange}
-        editing={editing} />
-      <KeyValueBlock
-        type={Type.MULTISELECT}
-        prop="Company type"
-        values={types}
-        value={state.type}
-        onSelectChange={onCompanyTypeChange}
-        editing={editing} />
+      <KeyValueBlock prop="Business entity">
+        {editing ? <Selectbox options={[businessEntity]} optionsSelected={state.businessEntity} onChange={onBusinessEntityChange} /> : businessEntity}
+      </KeyValueBlock>
+      <KeyValueBlock prop="Company type">
+        {editing ? <Selectbox options={types} optionsSelected={state.type} onChange={onCompanyTypeChange} multiple={true} /> : state.type.join(", ")}
+      </KeyValueBlock>
     </div>
   </Block>
 })

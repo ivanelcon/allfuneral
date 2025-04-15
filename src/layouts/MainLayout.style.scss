@@ -2,10 +2,11 @@
   min-width: 1050px;
   display: flex;
   &__side {
-    width: 370px;
+    width: 300px;
     z-index: 999;
   }
   &__content {
     flex: 1;
+    margin-left: 50px;
   }
 }

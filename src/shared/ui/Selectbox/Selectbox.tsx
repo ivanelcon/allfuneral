@@ -35,7 +35,10 @@ export const Selectbox: React.FC<Selectbox> = ({ options, optionsSelected, multi
   const resolveSelectedOptions = () => multiple ? Array.from(selects.values()).join(", ") : selected;
   const resolveOptionContent = (option: string) => {
     if (multiple) {
-      return <div className="selectbox__option-wrapper"><Checkbox id={option} name={option} value={option} checked={selects.has(option)} label={false} />{option}</div>
+      return <div className="selectbox__option-wrapper">
+        <Checkbox id={option} name={option} value={option} checked={selects.has(option)} label={false} readOnly />
+        {option}
+      </div>
     }
     return option;
   }
