@@ -2,7 +2,7 @@ test-task-api.allfuneral.com</br>
 <b>Стек:</b> TypeScript / React / MobX / SCSS / BEM / Antd DatePicker / Vite</br>
 </br>
 Включает:</br>
-mobx для кеширования/хранения</br>
+mobx для кеширования данных и хранения стейтов</br>
 роутинг через MainLayout с фоллбеком на NotFound</br>
 кастомный uikit без библиотек</br>
 работа с масками react-imask</br>
