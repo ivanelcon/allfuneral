@@ -18,6 +18,7 @@ button {
   font-family: 'Poppins';
 }
 
+/* Antd DatePicker redefinitions */
 .datepicker {
   border: 1px solid rgba(0, 0, 0, 0.2);
   border-radius: 8px;
@@ -37,6 +38,7 @@ button {
   border-color: transparent;
 }
 
+/* Default webkit scrollbar redefinitions */
 ::-webkit-scrollbar {
   width: 7px;
   height: 7px;

@@ -16,8 +16,8 @@ export function createDialogboxStore() {
       this.content = content;
     },
     close() {
-      this.content = () => null;
       this.isOpened = false;
+      this.content = () => null;
     },
     open() {
       this.isOpened = true;
