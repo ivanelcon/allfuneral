@@ -1,5 +1,6 @@
 <b>Oak Tree Cemetery</b></br>
 <b>stack:</b> Vite / TypeScript / React / MobX / SCSS / BEM</br>
+
 <b>mobx</b> для стейта / кеширования</br>
 автоматическое добавление access-токена (API)</br>
 reauth-логика для 401 Unauthorized ответов (API)</br>
